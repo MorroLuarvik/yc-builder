@@ -4,7 +4,7 @@ param ($SourcePath, $ArchiveName="file.zip", $DestPath)
 if ($null -eq $DestPath) { $DestPath = Get-Content Env:\TEMP }
 
 Write-Output "sourcePath: $SourcePath";
-Write-Output "name: $Name";
+Write-Output "name: $ArchiveName";
 Write-Output "destPath: $DestPath";
 
 $DestFileName = Join-Path $DestPath $ArchiveName
