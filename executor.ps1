@@ -36,7 +36,7 @@ $Project.functions | Get-Member -type NoteProperty | ForEach-Object {  #
     Write-Output " ============== "
 }
 
-HasFunction hello1
+HasFunction hello
 
 <#
 $dest = CreateArchive $SourceDir

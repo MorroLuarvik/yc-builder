@@ -18,12 +18,12 @@ function DeleteArchive($fileName) {
 
 function HasFunction($functionName) { #READY
     $ErrorActionPreference = "Continue"
-    $ret = yc sls fn get --name $functionName --format json 2> $null | ConvertFrom-Json
+    yc sls fn get --name $functionName --format json 2> $error | Out-Null
     $ErrorActionPreference = "Stop"
 
-    if ($null -ne $ret.ID) { return $true }
+    if ($error) { return $false }
 
-    return $false
+    return $true
 }
 
 function GetFunctionList() {
